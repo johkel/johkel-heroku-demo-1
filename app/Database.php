@@ -2,7 +2,9 @@
 
 namespace App;
 
-use PDO; // krävs för att jobba med PDO som är en inbyggd klass eftersom vi har ett namespace
+use PDO;
+
+// krävs för att jobba med PDO som är en inbyggd klass eftersom vi har ett namespace
 
 class Database
 {
@@ -11,7 +13,19 @@ class Database
 
     protected function __construct()
     {
-        $dsn = "pgsql:host=localhost;port=5432;dbname=todo-demo;user=postgres;password=postgres";
+        $db = parse_url(getenv("DATABASE_URL"));
+        if (!empty($db["host"])) {
+            $pdo = new \PDO("pgsql:" . sprintf(
+                    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+                    $db["host"],
+                    $db["port"],
+                    $db["user"],
+                    $db["pass"],
+                    ltrim($db["path"], "/")
+                ));
+        } else {
+            $dsn = "pgsql:host=localhost;port=5432;dbname=todo-demo;user=postgres;password=postgres";
+        }
         $this->pdo = new PDO($dsn);
         $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     }
