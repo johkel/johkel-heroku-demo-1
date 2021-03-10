@@ -1,5 +1,11 @@
 <?php
 
+// SÄTT PÅ ERRORRAPPORTERING MED PHP
+// detta måste tas bort innan man går live på riktigt
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+if($_GET["fel"]){ echo "fel"; }
+
 //konstanter för sökvägar
 define('ROOT', dirname(__DIR__));
 define('APP', ROOT . DIRECTORY_SEPARATOR . 'app');
