@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo exempel 1</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+
+<main class="container">
+
+    <div class="py-5 px-3">
+        <h1>Johans ToDo - exempel 1</h1>
+        <p>Detta är min lösning på Uppgift ToDo</p>
+        <ul class="list-group mt-4">
+            {% for task in tasks %}
+            <li class="list-group-item">{{ task.title }} <a href="/tasks/{{ task.id }}/edit">edit</a> <a href="/tasks/{{ task.id }}/delete">delete</a></li>
+            {% endfor %}
+        </ul>
+        <div class="mt-4">
+            <form method="post" action="/tasks">
+                <div class="mb-2">
+                    <label for="title" class="form-label">Att göra</label>
+                    <input type="text" class="form-control" name="title" id="title">
+                    <div id="emailHelp" class="form-text">Vad är det egentligen du vill få gjort?</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+</main><!-- /.container -->
+
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
