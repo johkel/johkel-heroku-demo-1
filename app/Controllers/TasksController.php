@@ -22,6 +22,9 @@ class TasksController
      */
     public function index()
     {
+
+        echo DATABASE_URL ?? "lokal";
+        exit();
         $data = [
             "tasks" => Database::findAllTasks()
         ];
