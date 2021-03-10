@@ -4,6 +4,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
     // /
     $r->addRoute('GET', '[/]', 'HomeController::index');
+    $r->addRoute('GET', '/error', 'HomeController::error');
 
     // tasks
     $r->get( '/tasks', 'TasksController::index');
