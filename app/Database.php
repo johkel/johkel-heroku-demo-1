@@ -13,6 +13,9 @@ class Database
 
     protected function __construct()
     {
+        // om mysql på 000
+//        $dsn = 'mysql:host=mysql#.000webhost.com;dbname=a336xxxx_test' , 'a336xxxx_test', '******', ;
+        // om heroku finns så kan den hämta från getenv
         $db = parse_url(getenv("DATABASE_URL"));
         if (!empty($db["host"])) {
             $dsn = "pgsql:" . sprintf(
@@ -25,6 +28,7 @@ class Database
                 );
         } else {
             $dsn = "pgsql:host=localhost;port=5432;dbname=todo-demo;user=postgres;password=postgres";
+            $dsn = 'mysql:host=localhost;dbname=id16355227_tododemo;user=id16355227_johkel;password=?7~gUzs}Gq%ULvld'; ;
         }
         $this->pdo = new PDO($dsn);
         $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
