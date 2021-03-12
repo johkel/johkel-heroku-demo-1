@@ -1,5 +1,5 @@
 {
-  "name":"johkel-heroku-demo",
+  "name":"johkel/heroku-demo",
   "description":"Demo för Heroku och deployment till det",
   "require": {
     "php": "^7.4.0",
