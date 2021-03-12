@@ -17,6 +17,7 @@ class Database
 //        $dsn = 'mysql:host=mysql#.000webhost.com;dbname=a336xxxx_test' , 'a336xxxx_test', '******', ;
         // om heroku finns så kan den hämta från getenv
         $db = parse_url(getenv("DATABASE_URL"));
+        var_dump($db);
         if (!empty($db["host"])) {
             $dsn = "pgsql:" . sprintf(
                     "host=%s;port=%s;user=%s;password=%s;dbname=%s",
