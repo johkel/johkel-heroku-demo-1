@@ -11,7 +11,7 @@ define('APP', ROOT . DIRECTORY_SEPARATOR . 'app');
 define('PUB', ROOT . DIRECTORY_SEPARATOR . 'public');
 
 // läs in debugfilen ifall det behövs
-//require_once APP . "/debug.php";
+require_once APP . "/debug.php";
 
 // läs in alla tillägg i vendor
 require_once ROOT . "/vendor/autoload.php";
