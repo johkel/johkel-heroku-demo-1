@@ -18,7 +18,7 @@ class Database
         // om heroku finns så kan den hämta från getenv
         $db = parse_url(getenv("DATABASE_URL"));
         if (!empty($db["host"])) {
-            $dsn = "pgsql:" . sprintf(
+            $dsn = "pgsqsl:" . sprintf(
                     "host=%s;port=%s;user=%s;password=%s;dbname=%s",
                     $db["host"],
                     $db["port"],

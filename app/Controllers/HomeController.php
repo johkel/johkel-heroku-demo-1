@@ -27,7 +27,7 @@ class HomeController
     public function error()
     {
         $all = Database::findAllTasks();
-        var_dump($all);
+        echo $all;
 
     }
 
