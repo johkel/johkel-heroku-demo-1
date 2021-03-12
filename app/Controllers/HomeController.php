@@ -1,6 +1,8 @@
 <?php
 namespace App\Controllers;
 
+use App\Database;
+
 /**
  * Class HomeController
  * @package App\Controllers
@@ -24,7 +26,8 @@ class HomeController
 
     public function error()
     {
-
+        $all = Database::findAllTasks();
+        var_dump($all);
 
     }
 

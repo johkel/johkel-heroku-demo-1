@@ -28,7 +28,7 @@ class Database
                 );
         } else {
             $dsn = "pgsql:host=localhost;port=5432;dbname=todo-demo;user=postgres;password=postgres";
-            $dsn = 'mysql:host=localhost;dbname=id16355227_tododemo;user=id16355227_johkel;password=?7~gUzs}Gq%ULvld'; ;
+//            $dsn = 'mysql:host=localhost;dbname=id16355227_tododemo;user=id16355227_johkel;password=?7~gUzs}Gq%ULvld'; ;
         }
         $this->pdo = new PDO($dsn);
         $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
